@@ -2,6 +2,7 @@
 
 <img src="logo.png" width=25% height=25%>
 
+A **Dockerfile** is a script that contains collections of commands and instructions that will be automatically executed in sequence in the docker environment for building a new docker image.
 
 This dockerfile is use to create a Docker container hosting a HTML5 website template on an Nginx server (lightest web server).
 We are using Alpine Linux distro as base image because it is so lightweight and small in size (just 4 MB) which makes our docker container least resource consuming.
@@ -9,9 +10,10 @@ We are using Alpine Linux distro as base image because it is so lightweight and 
 ## Prerequisites
 
 Docker should be installed.
+Root Privileges.
 
 
-## Format of DOCKERFILE
+## Commands for DOCKERFILE
 
 **ADD**: Copy files from a source on the host to the container’s own filesystem at the set destination.
 
@@ -42,7 +44,7 @@ Docker should be installed.
 
 ```docker build -t nginx_alpine . ```
 
-2. Check for the created image
+2. Check for the created image with name *nginx_alpine*
 
 ```docker images```
 
