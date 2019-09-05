@@ -40,7 +40,7 @@ Docker should be installed.
 
 1. Run the below command in the same directory where the dockerfile resides.
 
-```docker build -t nginx_alpine \.```
+```docker build -t nginx_alpine . ```
 
 2. Check for the created image
 
