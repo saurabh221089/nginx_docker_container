@@ -6,6 +6,11 @@
 This dockerfile is use to create a Docker container hosting a HTML5 website template on an Nginx server (lightest web server).
 We are using Alpine Linux distro as base image because it is so lightweight and small in size (just 4 MB) which makes our docker container least resource consuming.
 
+## Prerequisites
+
+Docker should be installed.
+
+
 ## Format of DOCKERFILE
 
 **ADD**: Copy files from a source on the host to the container’s own filesystem at the set destination.
@@ -35,7 +40,7 @@ We are using Alpine Linux distro as base image because it is so lightweight and 
 
 1. Run the below command in the same directory where the dockerfile resides.
 
-```docker build -t nginx_alpine```
+```docker build -t nginx_alpine \.```
 
 2. Check for the created image
 
