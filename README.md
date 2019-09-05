@@ -1,6 +1,6 @@
 # nginx_docker_container
 
-<img src="logo.png" width=50% height=50%>
+<img src="logo.png" width=25% height=25%>
 
 
 This dockerfile is use to create a Docker container hosting a website on an Nginx server created on Alpine Linux distro.
@@ -25,4 +25,4 @@ We have used Alpine distro because it is so lightweight and small in size that i
 
 Run the below command in the same directory where the dockerfile resides.
 
-docker build -t nginx_alpine .
+<p style="color:blue">docker build -t nginx_alpine .</p>
