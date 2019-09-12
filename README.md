@@ -52,8 +52,24 @@ Root Privileges.
 
 ```docker run -d -p 80:80 --name nginx_container nginx_alpine```
 
-4. Check for the running container.
+4. Check for the running container. Also check on browser http://localhost
 
 ```docker ps``` 
 
+5. Remove the container.
 
+```docker rm -f nginx_container```
+
+6. Tag the image with your repo.
+
+```docker image tag nginx_alpine saurabh221089/nginx_alpine ```
+
+7. Push the image on Docker Hub
+
+```docker push saurabh221089/nginx_alpine:latest```
+
+8. Delete the local image and pull it from Docker Hub again.
+
+```docker rmi saurabh221089/nginx_alpine```
+
+```docker run -d -p 80:80 --name website saurabh221089/nginx_alpine```
