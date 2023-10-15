@@ -9,7 +9,7 @@ RUN apk update && \
 	rm -rf /var/cache/apk/*
 
 COPY /profile /home/www
-COPY /default.conf /etc/nginx/conf.d/default.conf
+COPY /default.conf /etc/nginx/http.d/default.conf
 
 RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
 	ln -sf /dev/stderr /var/log/nginx/error.log
