@@ -1,21 +1,19 @@
-FROM alpine:latest
+# Use Alpine base image for ARM64
+FROM --platform=linux/arm64 alpine:latest
 
-MAINTAINER saurabh221089 <saurabh221089@gmail.com>
-
+# Install Nginx and required tools
 RUN apk update && \
-	apk upgrade && \
-	apk add bash curl nginx && \
-	mkdir /home/www && \
-	rm -rf /var/cache/apk/*
+    apk add --no-cache nginx bash curl && \
+    mkdir -p /run/nginx
 
-COPY /profile /home/www
-COPY /default.conf /etc/nginx/http.d/default.conf
+# Copy custom Nginx configuration (provide your own nginx.conf)
+COPY nginx.conf /etc/nginx/nginx.conf
 
-RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
-	ln -sf /dev/stderr /var/log/nginx/error.log
+# Copy static website files (optional)
+COPY profile/ /usr/share/nginx/html
 
-RUN mkdir -p /run/nginx
-
+# Expose HTTP port
 EXPOSE 80
 
+# Run Nginx in foreground
 CMD ["nginx", "-g", "daemon off;"]
