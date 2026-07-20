@@ -18,7 +18,7 @@ spec:
       #   kubernetes.io/hostname: rpi4
       containers:
       - name: nginx
-        image: saurabh221089/nginx_alpine:sha-4ef6fbf
+        image: saurabh221089/nginx_alpine:9dc6380
         # resources:
         #   requests:
         #     memory: "128Mi"
